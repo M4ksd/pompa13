@@ -3,7 +3,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title> Форма</title>
+    <title></title>
     <style>
         * {
             box-sizing: border-box;
@@ -147,13 +147,15 @@
         .b1 {
             background: red; /* Синий цвет фона */
             color: white; /* Белые буквы */
-           /* Размер шрифта в пунктах */
+            /* Размер шрифта в пунктах */
         }
+
         .b2 {
             background: green; /* Синий цвет фона */
             color: white; /* Белые буквы */
             /* Размер шрифта в пунктах */
         }
+
         .b3 {
             background: #B8860B; /* Синий цвет фона */
             color: white; /* Белые буквы */
@@ -161,48 +163,108 @@
         }
        
     </style>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript">
+<!--
+        function checkPasswordMatch() {
+            var password = $("#txtNewPassword").val();
+            var confirmPassword = $("#txtConfirmPassword").val();
+
+            if (password != confirmPassword)
+                $("#divCheckPasswordMatch").html("Паролі не співпадають!");
+            else
+                $("#divCheckPasswordMatch").html("Паролі співпадають");
+        }
+        //--></script>
 </head>
 <body bgcolor="#0D1021" alink="red" vlink="#FFFFFF">
-    <header> <section> <center> <h1>Форма 1</h1></center></section></header>
+    <header> <section> <center> <h1>Форма 2</h1></center></section></header>
     <div id="main">
         <article>
-            
-            <center> <h1>Реєстрація</h1></center>
+            <center> <h1>Заповніть</h1></center>
             <form method="post" id="myform" action="mailto:ostrovskii.maks@gmail.com" enctype="text/plain"></form>
-           
+
             <span class="inlineBlock parent">
                 <span class="inlineBlock child1">
                     <div class="blk">
                         <table class="L" width="80%">
                             <tbody>
                                 <tr>
-                                    <td> Імя</td>
-                                    <td><input type="text" name="first_name" form="myform" maxlength="10" required placeholder="Саша"> </td>
+                                    <td> Логін:</td>
+                                    <td><input type="text" name="Login" maxlength="12" form="myform" required> </td>
                                 </tr>
                                 <tr>
-                                    <td> Прізвище</td>
-                                    <td><input type="text" name="Last_name" form="myform" required maxlength="15" placeholder="Кирильчук"> </td>
-                                </tr>
-                                <tr>
-                                    <td>E-mail</td>
-                                    <td><input type="text" name="email" form="myform" required placeholder="Ваша е-адреса"></td>
-                                </tr>
-                                <tr>
-                                    <td>Дата народження</td>
-                                    <td><input type="date" id="date" name="date" form="myform" required></td>
-                                </tr>
-                                <tr>
-                                    <td>Залиште відгук</td>
-                                    <td><input type="text" name="coment" form="myform" id="user" maxlength="50" placeholder="Мені подобається сайт"></td>
-                                </tr>
-                                <tr>
-                                    <td>Поставте оцінку сайту</td>
+                                    <td> Пароль:</td>
                                     <td>
-                                        <input type="radio" name="answer" value="yes" checked /> 1
-                                        <input type="radio" name="answer" value="no" /> 2
-                                        <input type="radio" name="answer" value="yes" /> 3
-                                        <input type="radio" name="answer" value="no" /> 4
-                                        <input type="radio" name="answer" value="no" /> 5
+                                        <div class="td">
+                                            <input maxlength="12" required type="password" form="myform" id="txtNewPassword" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td> Підтвердіть пароль:</td>
+                                    <td>
+                                        <div class="td">
+                                            <input required type="password" form="myform" id="txtConfirmPassword" onkeyup="checkPasswordMatch();" />
+                                        </div>
+                                        <div class="registrationFormAlert" id="divCheckPasswordMatch">
+                                        </div>
+                                    </td>
+                                </tr>
+
+
+
+                                <tr>
+                                    <td>Стать</td>
+                                    <td>
+                                        <select name="sex" size=1 form="myform">
+                                            <option value=""></option>
+                                            <option value="Man"> Чоловік </option>
+                                            <option value="Woomen"> Жінка </option>
+
+                                        </select>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>Вкажіть місто</td>
+                                    <td>
+                                        <select name="City" size=1 form="myform" required>
+                                            <option value=""></option>
+                                            <option value="Kiyev"> Київ </option>
+                                            <option value="Lviv"> Львів </option>
+                                            <option value="Kharkiv"> Харків </option>
+                                            <option value="Dnipro"> Дніпро </option>
+                                            <option value="Odesa"> Одеса </option>
+                                            <option value="Rivne"> Рівне </option>
+                                            <option value="Pedro"> Житомир </option>
+                                            <option value="Poltava"> Полтава </option>
+                                            <option value="Ternopil"> Тернопіль </option>
+                                            <option value="Symy"> Суми </option>
+                                            <option value="Lyck"> Луцьк </option>
+                                            <option value="Herson"> Херсон </option>
+                                            <option value="Zaporiga"> Запоріжжя </option>
+                                            <option value="Ivano-Frankivsk"> Івано-Франківськ </option>
+                                            <option value="Hmelnytskiy"> Хмельницький </option>
+                                            <option value="Vinnytsa"> Вінниця  </option>
+                                            <option value="Krivyi Rig"> Кривий Ріг </option>
+                                            <option value="Ujgorod"> Ужгород </option>
+                                            <option value="Mikolaiv"> Миколаїв </option>
+                                            <option value="Chernivtsi"> Чернівці </option>
+                                        </select>
+                                    </td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Ваші інтереси
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" name="answer" value="yes"> Футбол
+                                        <input type="checkbox" name="answer" value="yes"> Спати
+                                        <input type="checkbox" name="answer" value="yes"> Біг
+                                        <input type="checkbox" name="answer" value="yes"> Малювати
+                                        <input type="checkbox" name="answer" value="yes">Читати
+                                        <input type="text" name="interesu" maxlength="12" form="myform" size="10" placeholder="інші інтереси" > 
                                     </td>
                                 </tr>
                             </tbody>
@@ -211,35 +273,42 @@
                                     <th colspan="2">
                                         <input class="b2" type="submit" form="myform" value="Відправити" />
                                         <input class="b1" type="reset" form="myform" value="Очистити" />
-                                        <form action="popka.html" >
+                                        <form action="gomer.html">
                                             <button class="b3"> Наступний крок реєстрації</button>
                                         </form>
+                                        <form action="comment.html">
+                                            <button class="b1"> ←Назад</button>
+                                        </form>
+
                                     </th>
                                 </tr>
                             </tfoot>
                         </table>
                     </div>
+
+                </span>
+                <center>
+
+                </center>
                
-            </span>
-            <center>
-                
-            </center>
-        </article>
+</article>
+        
         <nav>
             <div class="layer3">
                 <h3>Навігаційне меню сайта:</h3> <br>
-                                                 <form action="comment.html" >
-                                                     <button class=" button button1">  <p> Форма 1 </p></button> <br>
-                                                 </form><br><br>
+                <form action="comment.html" >
+                    <button class=" button button1">  <p> Форма 1 </p></button> <br>
+                </form><br><br>
 
-                                                 <form action="popka.html" >
-                                                     <button class=" button button1">  <p> Форма 2 </p></button> <br>
-                                                 </form><br><br>
-                                                 <form action="gomer.html" >
-                                                     <button class=" button button1">  <p> Форма 3 </p></button> <br>
-                                                 </form>
-     <br><br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
-                                                 
+                <form action="popka.html" >
+                    <button class=" button button1">  <p> Форма 2 </p></button> <br>
+                </form><br><br>
+                <form action="gomer.html" >
+                    <button class=" button button1">  <p> Форма 3 </p></button> <br>
+                </form>
+
+                <br><br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+
             </div>
         </nav>
         <aside class="L">
